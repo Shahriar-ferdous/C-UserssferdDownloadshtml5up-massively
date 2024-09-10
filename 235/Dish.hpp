@@ -87,7 +87,7 @@ parameter.
 /**
 * @return The cuisine type of the dish in string form.
 */
-       CuisineType getCuisineType() const;
+       std::string getCuisineType() const;
        void display() const;
 private:
    std::string name_;

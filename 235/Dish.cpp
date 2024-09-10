@@ -34,8 +34,23 @@ double Dish::getPrice()const{ //Accessor for price
 void Dish::setPrice( double price){ // mutator for price
     price_ = price;
 }
-Dish::CuisineType Dish::getCuisineType() const{ // Accessor for cuisine type 
-    return cuisine_type_;
+std::string Dish::getCuisineType() const{ // Accessor for cuisine type 
+    switch (cuisine_type_){
+        case ITALIAN:
+            return "ITALIAN";
+        case MEXICAN:
+            return "MEXICAN";
+        case CHINESE:
+            return "CHINESE";
+        case INDIAN:
+            return "INDIAN";
+        case AMERICAN:
+            return "AMERICAN";
+        case FRENCH:
+            return "FRENCH";
+        default:
+            return "OTHER";
+    }
 }
 void Dish::setCuisineType(CuisineType cuisine_type){ // mutator for cuisine type
     cuisine_type_ = cuisine_type; 
