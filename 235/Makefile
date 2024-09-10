@@ -1,18 +1,28 @@
+# Makefile for compiling the Dish program
+
+# Compiler
 CXX = g++
-CXXFLAGS = -std=c++17 -g -Wall -O2
 
-PROG ?= main
-OBJS = Dish.o ChangeThis.o
+# Compiler flags
+CXXFLAGS = -std=c++11 -Wall
 
-all: $(PROG)
+# Target executable
+TARGET = dishProgram
 
-.cpp.o:
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+# Source files (include test.cpp here)
+SRCS = Dish.cpp test.cpp
 
-$(PROG): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
+# Object files
+OBJS = $(SRCS:.cpp=.o)
 
+# Build the executable
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+
+# Compile the object files
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
+# Clean the build directory
 clean:
-	rm -rf $(EXEC) *.o *.out main 
-
-rebuild: clean all
+	rm -f $(OBJS) $(TARGET)
