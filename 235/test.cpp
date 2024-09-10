@@ -4,6 +4,11 @@
 int main() {
     // Instantiate a dish using the default constructor
     Dish defaultDish;
+    defaultDish.getName();
+    defaultDish.getIngredients();
+    defaultDish.getPrepTime();
+    defaultDish.getPrice();
+    defaultDish.getCuisineType();
     defaultDish.setName("UNKNOWN");  // Default name (can be skipped as defaultDish already sets this)
     defaultDish.setIngredients({});  // Empty ingredients
     defaultDish.setPrepTime(30);     // Set preparation time to 30
